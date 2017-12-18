@@ -1,0 +1,21 @@
+Host *
+  ServerAliveCountMax 3
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+  LogLevel ERROR
+  ServerAliveInterval 60
+  IdentityFile ~/.ssh/id_rsa
+
+Host *.domain.local
+  ProxyCommand ssh myproxy nc %h %p
+
+Host */*
+  ProxyCommand ssh %r@$(dirname %h) -W $(basename %h):%p
+
+Host myhost1.domain.local
+  User root
+
+Host myhost2.domain.local
+
+Host=myhost3
+  HostName=myhost3.domain.local

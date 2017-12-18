@@ -1,0 +1,4 @@
+.rope*
+.vscode
+*.log
+*.pyc
