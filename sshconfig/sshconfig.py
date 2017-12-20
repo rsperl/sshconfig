@@ -14,10 +14,11 @@ import argparse
 from io import StringIO
 import re
 import sys
+import os
 
 from datetime import datetime
 
-def parse_ssh_config(config):
+def parse_ssh_config(config=os.getenv("HOME") + "/.ssh/config"):
     entries = []
     with open(config, 'r') as fh:
         entry = None
@@ -30,7 +31,7 @@ def parse_ssh_config(config):
             if m:
                 if entry:
                     entries.append(entry)
-                entry = SshConfigEntry(host=m.group(1).strip())
+                entry = SshConfigEntry(host=m.group(1).strip(), options=dict())
                 continue
 
             m = re.match("^\s*(.+?)\s+(.+)$", line)

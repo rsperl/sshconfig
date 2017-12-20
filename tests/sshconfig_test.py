@@ -1,5 +1,7 @@
 import os
-from sshconfig.sshconfig import SshConfigEntry, parse_ssh_config
+
+from sshconfig.sshconfig import parse_ssh_config, SshConfigEntry
+
 
 class TestSshConfig(object):
 
