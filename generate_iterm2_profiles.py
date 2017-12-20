@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from sshconfig.sshconfig import parse_ssh_config
 from iterm2.dynamic_profile import DynamicProfile
