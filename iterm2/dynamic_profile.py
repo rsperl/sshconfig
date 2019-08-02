@@ -42,4 +42,4 @@ class DynamicProfile(object):
         logger.info("writing out {}".format(location))
         with open(location, 'w') as fh:
             fh.write(json.dumps(profiles, indent=2))
-
+            os.remove(backupcopy)
