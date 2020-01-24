@@ -7,6 +7,7 @@ sys.path.append(os.getenv("HOME") + "/git-personal/sshconfig")
 from sshconfig.sshconfig import parse_ssh_config
 from iterm2.dynamic_profile import DynamicProfile
 
+
 def setup_logging(level=logging.INFO):
     out_handler = logging.StreamHandler(sys.stdout)
     fmtstr = "%(asctime)s %(levelname)s [%(funcName)s:%(lineno)d] %(message)s"

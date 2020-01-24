@@ -7,9 +7,10 @@ import os
 
 from datetime import datetime
 
+
 def parse_ssh_config(config=os.getenv("HOME") + "/.ssh/config"):
     entries = []
-    with open(config, 'r') as fh:
+    with open(config, "r") as fh:
         entry = None
         for line in fh:
 
@@ -38,7 +39,6 @@ def parse_ssh_config(config=os.getenv("HOME") + "/.ssh/config"):
 
 
 class SshConfigEntry(object):
-
     def __init__(self, host, options=dict()):
         self.host = host
         self.options = options
